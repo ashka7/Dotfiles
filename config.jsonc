@@ -1,0 +1,49 @@
+{
+  "layer": "top",
+  "position": "top",
+  "reload_style_on_change": true,
+  "modules-left": [ "custom/icon", "clock"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["tray", "custom/power"],
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": "",
+      "empty": ""
+    },
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5]
+    }
+  },
+
+  "hyprland/window": {
+  "max-length": 10,
+  "tooltip": false
+},
+
+  "custom/separator": {
+  "format": " | ",
+  "tooltip": false
+},
+
+"custom/power": {
+        "format" : "",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
+    },
+
+  "clock": {
+    "format": "{:%H:%M:%S}",
+    "interval": 1,
+    "tooltip-format": "<tt>{calendar}</tt>"
+ }
+}
