@@ -1,0 +1,8 @@
+# fzf only the linux disk without errors
+find / -type f 2>/dev/null | fzf
+
+# will create a text file containing all explicitly installed packages (i.e. it won't list packages that were installed as dependencies)
+pacman -Qqe > packagelist.txt
+
+# install all the packages in the text file
+sudo pacman -S --needed $(cat packagelist.txt)
