@@ -1,0 +1,5 @@
+#alias wall="swww img --transition-type wipe --transition-angle 30 --transition-fps 180 "
+alias wall="./wallpaper.sh"
+alias ff='fastfetch'
+alias ls='lsd'
+alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
