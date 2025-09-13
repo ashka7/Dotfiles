@@ -1,5 +1,25 @@
 #alias wall="swww img --transition-type wipe --transition-angle 30 --transition-fps 180 "
-alias wall="./wallpaper.sh"
-alias ff='fastfetch'
 alias ls='lsd'
 alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
+alias rmpc='rmpc update && rmpc'
+alias rankmirrors='reflector --latest 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist'
+alias fzf='find . -xdev -type f | fzf --preview "bat --style=numbers --color=always {} || cat {}"'
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
+alias ls='eza -lh --group-directories-first --icons=auto'
+alias lsa='ls -a'
+alias lt='eza --tree --level=2 --long --icons --git'
+alias lta='lt -a'
+alias cd="zd"
+zd() {
+  if [ $# -eq 0 ]; then
+    builtin cd ~ && return
+  elif [ -d "$1" ]; then
+    builtin cd "$1"
+  else
+    z "$@" && printf "\U000F17A9 " && pwd || echo "Error: Directory not found"
+  fi
+}
+open() {
+  xdg-open "$@" >/dev/null 2>&1 &
+}
+
