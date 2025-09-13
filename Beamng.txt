@@ -1,0 +1,1 @@
+SDL_VIDEODRIVER=x11 ~/.local/share/Steam/steamapps/common/BeamNG.drive/BinLinux/BeamNG.drive.x64
